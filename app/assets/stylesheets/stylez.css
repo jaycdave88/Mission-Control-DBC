@@ -1,0 +1,214 @@
+pre{
+  background: #F5F5F5;
+  color: #333;
+  border-radius: 0.5em;
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+
+
+body {
+  background-color: #F5F5F5;
+}
+
+.title {
+  color: #565a5c;
+  text-shadow: 1px 1px 1px;
+}
+
+.backSplash {
+  height: 350px;
+  width: 100%;
+  background-color: black;
+  margin-bottom: -52px;
+
+}
+
+.welcome{
+  position: absolute;
+  top: 90px;
+  z-index: 1;
+  width: 100%;
+  color:white;
+  font-size: 3em;
+}
+
+
+.welcome h1{
+  font-family: Oxygen, sans-serif;
+  text-shadow: 1px 1px 1px;
+}
+
+.avatars img {
+  width: 7.5%;
+  border-radius: 50%;
+
+}
+
+video {
+  -webkit-transform: scaleX(2);
+  -moz-transform: scaleX(2);
+}
+
+.text-info{
+  color:#c60f13;
+  font-weight: bold
+}
+
+.label {
+  font-size: 0.6em;
+  display: inline;
+
+}
+
+footer{
+  height: 350px;
+  font-family: Oxygen, sans-serif;
+}
+
+
+/******************************
+  NAV BAR STYLES
+*******************************/
+#search{
+  margin:-9px 0% 0% 0%;
+}
+
+#buttons{
+  padding-right: 0;
+}
+
+#home-img{
+  height:40px;
+}
+
+#hover2{
+  background: rgb(78,167,56);
+}
+
+#hover1{
+  background: #333;
+}
+
+#chat_link a{
+  background: rgb(78,167,56);
+}
+
+
+/******************************
+  STICKY STYLES
+*******************************/
+
+.yellow {
+  background: #FFDD2A;
+}
+
+.pink{
+  background: #EE5E9F;
+}
+
+.orange{
+  background: #F9A55B;
+}
+
+.blue {
+  background: #36A9CE;
+}
+
+.green {
+  background: #D0E17D;
+}
+
+.purple {
+  background: #AE85EC;
+}
+
+.red{
+  background: #c60f13;
+}
+
+.grey{
+  background: #333333;
+}
+
+.reveal-modal{
+  background: #333333;
+
+}
+
+.sticky {
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  color: #333;
+  position: relative;
+  width: 300px;
+  margin: 70px;
+  padding: 2em;
+  font-size: 30px;
+  box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+}
+
+.incline:nth-of-type(1n){
+      transition: 1s;
+
+  transform: rotate(2deg);
+}
+.incline:nth-of-type(2n){
+      transition: 1s;
+
+  transform: rotate(2deg);
+}
+.incline:nth-of-type(3n){
+  transform: rotate(-3deg);
+  transition: 1s;
+}
+.incline:nth-of-type(4n){
+  transform: rotate(-4deg);
+  transition: 1s;
+}
+.incline:nth-of-type(5n){
+  transform: rotate(4deg);
+  transition: 1s;
+}
+.incline:nth-of-type(5n){
+  transform: rotate(-5deg);
+  transition: 1s;
+}
+
+.incline:hover {
+
+  transform: rotate(0deg);
+
+}
+.incline:nth-of-type(n+2):hover {
+
+  transform: rotate(-3deg);
+
+}
+
+.sticky-panel {
+  box-shadow:  2px 2px 2px;
+  background-color: #ccc;
+  border-radius:5px;
+  margin-bottom: 15px;
+  border: 5px solid black;
+
+}
+
+/******************************
+  MODAL STYLES
+*******************************/
+
+.reveal-modal label, h1, h2, p{
+  color: #F5F5F5;
+}
+
+.help-title a{
+  color: #F5F5F5;
+}
+
+#StickyModal{
+  overflow: scroll;
+}

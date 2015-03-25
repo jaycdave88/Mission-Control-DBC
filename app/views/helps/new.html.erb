@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="text-center">
+    <h1>Create A Help</h1>
+        <%= form_for "help", url: sticky_helps_path, method: 'post' do |f| %>
+            <fieldset>
+                <legend>Assistance</legend>
+            <h3><%= f.label :title, class: "label" %></h3>
+            <%= f.text_field :title %>
+            <br>
+            <br>
+            <h3><%= f.label :content, class: "label" %></h3><br>
+            <%= f.text_area :content, rows: 7 %>
+            <p class="text-info">NOTE: you may use <kbd>`</kbd> (the grave accent character) to denote blocks of code.</p>
+            <br>
+            <%= f.submit 'Submit Help', class: "button radius" %>
+            </fieldset>
+        <% end %>
+    </div>
+</div>

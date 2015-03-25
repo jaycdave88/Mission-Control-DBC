@@ -1,0 +1,26 @@
+<section class="top-bar-section">
+  <ul class="right">
+    <% if session[:user_id] %>
+      <ul id="hover1" class="f-dropdown" data-dropdown-content>
+        <li><a href="#">Nothing to display</a></li>
+      </ul>
+      <ul id="hover2" class="f-dropdown" data-dropdown-content>
+        <li id="chat_link"><a href="http://chat-test-dbc.herokuapp.com/" onclick="javascript:void window.open('http://chat-test-dbc.herokuapp.com/','1413931469448','width=400,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;">Chat with Someone</a></li>
+        <li class="g-hangout" data-render="createhangout"><a href="#">Hangout</a></li>
+      </ul>
+      <li class="active" id="notifications"><%= link_to "0", "#", data:{ dropdown: "hover1", options: "is_hover:true"}%></li>
+      <li class="active"><%= link_to "Connect", "#", data:{ dropdown: "hover2", options: "is_hover:true"}%></li>
+      <li class="active"><%=link_to "Raise a new sticky!", new_sticky_path %></li>
+      <li class="active"><a href="<%= user_path(session[:user_id]) %>">Profile</a></li>
+      <li class="active"><%=link_to "Log Out", session_path(session[:user_id]), method: :delete %></li>
+
+    <% else %>
+
+      <li class="active"><a href="/sessions/new" data-reveal-id="LoginModal">Log In</a></li>
+      <li class="active"><a href="/users/new" data-reveal-id="SignupModal">Sign Up</a></li>
+
+    <% end %>
+  </ul>
+</section>
+
+<!-- comment to push to git -->

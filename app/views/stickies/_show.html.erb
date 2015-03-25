@@ -1,0 +1,41 @@
+  <div class="container row">
+    <h1 class="heading text-center"><%= @sticky.title %></h1>
+      <div class="center">
+
+        <% if session[:user_id] == @sticky.user_id %>
+          <h5 class="text-center">
+            <%= link_to "Delete", sticky_path, method: :delete,class: "label", data: {confirm: "do you really want to delete this sticky??"} %>
+            <%= link_to "Edit", edit_sticky_path, method: :get, class: "label" %>
+          </h5>
+
+        <% end %>
+
+      </div>
+      <div id="content-blocks">
+        <% blocks = @sticky.content.split("`") %>
+        <% blocks.each_with_index do |block, index| %>
+            <% if index%2==0 %>
+                <p><%=block%></p>
+            <% else %>
+                <pre><%=block%></pre>
+            <% end %>
+        <%end%>
+        <% unless @sticky.image.url == "/images/original/missing.png"  %>
+        <%= image_tag @sticky.image.url %>
+        <% end %>
+      </div>
+      <div>
+        <h2>Responses: </h2>
+
+        <ul id="helps" class="small-block-grid-2">
+          <% @helps.each do |help| %>
+            <li class="sticky blue incline">
+              <h1 class="help-title"><%= link_to help.title, "#" , class: 'red' %></h1> <p><%= help.content %></p></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <% if session[:user_id] %>
+        <%= button_to "Help", new_sticky_help_path(@sticky), method: "get", class: "button radius" %>
+      <% end %>
+    </div>

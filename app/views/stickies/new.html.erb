@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="text-center">
+        <%= form_for "sticky", url: stickies_path, method: 'post' do |f| %>
+            <fieldset>
+            <legend>Create A Sticky</legend>
+            <h2><%= f.label :title, class: "label radius" %></h2>
+            <%= f.text_field :title %>
+            <h2><%= f.label :content, class: "label radius" %></h2>
+            <%= f.text_area :content, rows: 7 %>
+            <p class="text-info">NOTE: you may use <kbd>`</kbd> (the grave accent character) to denote blocks of code.</p>
+
+            <br>
+            <%= f.label :image %>
+            <%= f.file_field :image %>
+
+            <%= f.submit 'Submit Sticky', class: "button" %>
+            </fieldset>
+        <% end %>
+    </div>
+</div>

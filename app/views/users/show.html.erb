@@ -1,0 +1,22 @@
+<div class="row">
+  <h3 class="text-center">Welcome, <%=@user.name%>!</h3>
+  <h3 class='text-center'>Browse your stickies:</h3>
+  <ul id="sticky-list" class="small-block-grid-3">
+    <% @stickies.each do |sticky| %>
+
+      <li class="sticky yellow">
+        <%=link_to sticky.title, sticky_path(sticky), :'data-reveal-id' => "StickyModal" %>
+
+      	<% if sticky.user.id == session[:user_id] %><br>
+      		<%=link_to "Delete", sticky_path(sticky), method: "delete", class: "label" %>
+          <%= link_to "Edit", edit_sticky_path(sticky), class: "label", method: :get %>
+      	<% end %>
+
+
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div id="StickyModal" class="reveal-modal" data-reveal></div>
+
+

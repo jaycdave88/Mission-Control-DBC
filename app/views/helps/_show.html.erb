@@ -1,0 +1,41 @@
+  <div class="container row">
+
+    <h1 class="heading text-center"><%= @help.title %></h1>
+
+
+      <div class="center">
+
+        <% if session[:user_id] == @help.sticky.user_id %>
+
+          <h5 class="text-center">
+
+            <%= button_to "Delete", sticky_help_path, method: :delete, data: {confirm: " you really want to delete this help??"} %>
+
+            <br>
+
+            <%= button_to "Edit", edit_sticky_help_path, method: :get %>
+          </h5>
+
+        <% end %>
+
+      </div>
+
+      <div id="content-blocks">
+        <% blocks = @help.content.split("`") %>
+        <% blocks.each_with_index do |block, index| %>
+            <% if index%2==0 %>
+                <p><%=block%></p>
+            <% else %>
+                <pre><%=block%></pre>
+            <% end %>
+        <%end%>
+        <% unless @help.image.url == "/images/original/missing.png"  %>
+        <%= image_tag @help.image.url %>
+        <% end %>
+      </div>
+
+      <% if session[:user_id] %>
+        <%= button_to "
+        ", sticky_path(@help.sticky), method: "get", class: "button radius" %>
+      <% end %>
+    </div>

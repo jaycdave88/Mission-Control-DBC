@@ -1,0 +1,39 @@
+<header>
+    <video class="backSplash" id="videoDBC" preload="auto" autoplay="true" loop="loop" muted="muted">
+      <source src=<%=asset_path('gopher-snakes-2014.mp4')  %> type="video/mp4">
+      </video>
+
+<div class="welcome text-center">
+  <h1>WELCOME BOOTS</h1>
+  <p>Build beautiful and meaningful things.</p>
+</div>
+
+<nav class="top-bar" >
+  <div class="row display">
+    <div class="large-3 columns"><%= link_to image_tag("http://foundation.zurb.com/docs/assets/img/images/fi-home.svg", :alt=>"logo", title: "Mission Control", :id=>"home-img"), stickies_path %></div>
+
+    <div class="large-5 columns">
+      <div class="row collapse">
+        <div class="small-8 large-10 columns">
+          <form id="search-form">
+            <input type="text" name="query" placeholder="Search Stickies">
+        </div>
+        <div id="search" class="small-3 large-1 end columns">
+          <input type="submit" class="alert button expand" value="Go">
+        </div>
+      </form>
+      </div>
+    </div>
+
+    <div id="buttons" class="large-4 columns"><%= render partial: 'links' %></div>
+    <p class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></p>
+  </div>
+</header>
+
+<% if flash[:notice] %>
+  <div id="flash" data-alert class="alert-box info radius">
+    <div class="notice"><h3 class="text-center"><%= flash[:notice] %></h3><a href="#" class="close">&times;</a></div>
+  </div>
+<% end %>
+
+<!-- comment to push to git -->

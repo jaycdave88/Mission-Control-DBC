@@ -1,0 +1,35 @@
+
+
+<div class="row">
+
+  <h1 class="text-center title">Stickies!</h1>
+  <ul id="sticky-list" class="sticky-panel small-block-grid-3">
+    <% @stickies.each do |sticky| %>
+      <li class="sticky incline <%= phase_color(sticky) %>" draggable="true" >
+
+
+        <%= link_to sticky.title, sticky_path(sticky), :'data-reveal-id' => "StickyModal"  %>
+
+        <p id="sticky_index">raised by <%= sticky.user.name %></p></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="StickyModal" class="reveal-modal" data-reveal></div>
+
+<div id="LoginModal" class="reveal-modal" data-reveal>
+
+  <%= form_tag sessions_path, method: "post" do %>
+    <%= label_tag :email %><br>
+    <%= email_field_tag :email, params[:email] %><br>
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %><br>
+    <%= submit_tag "Log In", class: "button [tiny small large]" %>
+  <% end %>
+</div>
+
+  <div id="SignupModal" class="reveal-modal" data-reveal>
+
+  </div>
+
+<%= render partial: "slider"%>
